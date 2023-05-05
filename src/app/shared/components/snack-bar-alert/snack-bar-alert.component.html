@@ -1,0 +1,13 @@
+<div class="alert-response" [style.backgroundColor]="getBackgroundAlert()">
+  <span class="material-symbols-outlined icon" *ngIf="alertResponse?.isSuccess; else isError">
+    check_circle
+  </span>
+
+  <ng-template #isError>
+    <span class="material-symbols-outlined icon">
+      error
+    </span>
+  </ng-template>
+
+  <p class="message">{{ alertResponse.message }}</p>
+</div>
