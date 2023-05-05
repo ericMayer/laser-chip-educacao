@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Aluno } from '@pages/list-alunos/shared/interfaces/aluno.interface';
 import { Columns } from '@pages/list-alunos/shared/interfaces/columns.interface';
@@ -9,7 +9,9 @@ import { Columns } from '@pages/list-alunos/shared/interfaces/columns.interface'
   styleUrls: ['./list-table.component.scss']
 })
 export class ListTableComponent {
+
   @Input({ required: true }) public alunos: Aluno[];
+  @Output() public edit: EventEmitter<number> = new EventEmitter();
 
   public displayedColumns: string[] = ['id', 'nome', 'sobrenome', 'idade', 'sexo', 'actions'];
   public columns: Columns[] = [

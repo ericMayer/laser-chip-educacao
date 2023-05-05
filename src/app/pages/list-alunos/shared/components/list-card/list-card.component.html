@@ -13,7 +13,7 @@
     </mat-card-content>
 
     <mat-card-actions class="actions">
-      <span class="material-symbols-outlined">
+      <span class="material-symbols-outlined" (click)="edit.emit(aluno?.id)">
         edit
       </span>
 

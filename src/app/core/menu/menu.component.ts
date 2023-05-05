@@ -22,7 +22,7 @@ export class MenuComponent {
     },
     {
       text: 'Criar Aluno',
-      route: ''
+      route: '/criar-aluno'
     }
   ]
 

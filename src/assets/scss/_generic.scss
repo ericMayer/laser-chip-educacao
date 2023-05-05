@@ -23,3 +23,15 @@
 .material-symbols-outlined {
   line-height: 0;
 }
+
+.confirm:not(:disabled) {
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 40px !important;
+  width: auto !important;
+  border-radius: 8px !important;
+  background-color: var(--primary-color) !important;
+  color: var(--dark-color) !important;
+}
