@@ -31,7 +31,30 @@
   justify-content: center !important;
   height: 40px !important;
   width: auto !important;
+  padding: 12px;
   border-radius: 8px !important;
   background-color: var(--primary-color) !important;
   color: var(--dark-color) !important;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+
+  .cancel,
+  .confirm {
+    cursor: pointer;
+  }
+
+  .cancel {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    padding: 12px;
+    height: 40px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

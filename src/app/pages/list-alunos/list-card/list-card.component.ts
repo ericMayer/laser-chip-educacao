@@ -10,7 +10,8 @@ import { Columns } from '@pages/list-alunos/shared/interfaces/columns.interface'
 })
 export class ListCardComponent {
   @Input({ required: true }) public alunos: Aluno[];
-  @Output() public edit: EventEmitter<number> = new EventEmitter();
+  @Output() public editAluno: EventEmitter<number> = new EventEmitter();
+  @Output() public deleteAluno: EventEmitter<number> = new EventEmitter();
 
   public columns: Columns[] = [
     {

@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+import { take } from 'rxjs';
+
 import Inputmask from 'inputmask';
 
 import { AlunoService } from '../shared/services/aluno.service';
@@ -129,5 +131,16 @@ export class CreateAlunoComponent implements OnInit, AfterViewInit {
     this.alunoForm.get(field)?.hasError?.(error);
 
   public getTextButton = (): string =>
-    this.idAluno ? 'Atualizar' : 'Cadastrar'
+    this.idAluno ? 'Atualizar' : 'Cadastrar';
+
+  public deleteAluno(): void {
+    if (this.idAluno) {
+      this.alunoService.deleteAluno(this.idAluno);
+      this.alunoService.updateListAlunos$
+        .pipe(take(1))
+        .subscribe(() =>
+          this.router.navigateByUrl('')
+        );
+    }
+  }
 }

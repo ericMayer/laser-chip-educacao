@@ -1,0 +1,11 @@
+<div class="confirm-dialog">
+  <h1 class="title-font">{{ confirmDialog?.title }}</h1>
+  <p class="subtitle-font">{{ confirmDialog?.title }}</p>
+
+  <img class="image" src="assets/images/confirm-alert.svg" alt="Imagem de confirmação">
+
+  <div class="actions">
+    <button mat-stroked-button class="cancel text-font" (click)="dialogRef.close()">Cancelar</button>
+    <button mat-raised-button class="confirm text-font" (click)="dialogRef.close(true)">Excluir</button>
+  </div>
+</div>

@@ -11,7 +11,8 @@ import { Columns } from '@pages/list-alunos/shared/interfaces/columns.interface'
 export class ListTableComponent {
 
   @Input({ required: true }) public alunos: Aluno[];
-  @Output() public edit: EventEmitter<number> = new EventEmitter();
+  @Output() public editAluno: EventEmitter<number> = new EventEmitter();
+  @Output() public deleteAluno: EventEmitter<number> = new EventEmitter();
 
   public displayedColumns: string[] = ['id', 'nome', 'sobrenome', 'idade', 'sexo', 'actions'];
   public columns: Columns[] = [

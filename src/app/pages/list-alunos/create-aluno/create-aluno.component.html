@@ -1,4 +1,4 @@
-<form class="form" [formGroup]="alunoForm" (ngSubmit)="create()">
+<form class="form" [formGroup]="alunoForm">
 
   <mat-form-field appearance="outline">
     <mat-label class="small-font">Nome</mat-label>
@@ -51,9 +51,15 @@
     <mat-error *ngIf="showErrorByField('sexo', 'required')">O sexo é obrigatório.</mat-error>
   </mat-radio-group>
 
-  <button class="confirm text-font" mat-raised-button type="submit" [disabled]="alunoForm?.invalid">
-    <mat-spinner *ngIf="isLoading" [diameter]="24"></mat-spinner>
+  <div class="actions">
+    <button mat-stroked-button class="cancel text-font" *ngIf="idAluno" (click)="deleteAluno()">Excluir</button>
 
-    {{ getTextButton() }}
-  </button>
+    <button class="confirm text-font" mat-raised-button type="submit" [disabled]="alunoForm?.invalid"
+      (click)="create()">
+      <mat-spinner *ngIf="isLoading" [diameter]="24"></mat-spinner>
+
+      {{ getTextButton() }}
+    </button>
+  </div>
+
 </form>
