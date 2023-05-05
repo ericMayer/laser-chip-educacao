@@ -1,7 +1,7 @@
 <div class="menu">
 
   <mat-toolbar class="toolbar">
-    <button class="toolbar-button" mat-icon-button (click)="sidenav.toggle()">
+    <button class="toolbar-button" mat-icon-button (click)="openMenu()">
       <span class="material-symbols-outlined" *ngIf="menuIsOpen; else showMenu">
         close
       </span>
@@ -20,7 +20,9 @@
     <mat-sidenav #sidenav mode="side" class="sidenav">
 
       <mat-nav-list class="nav-item" *ngFor="let option of menu">
-        <a class="nav-option" mat-list-item [routerLink]="option?.route" routerLinkActive="active">{{ option?.text
+        <a class="nav-option" mat-list-item [routerLink]="option?.route" routerLinkActive="active"
+          (click)="openMenu()">{{
+          option?.text
           }}</a>
       </mat-nav-list>
 

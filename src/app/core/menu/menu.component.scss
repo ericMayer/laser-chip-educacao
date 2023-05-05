@@ -1,3 +1,5 @@
+@import "../../../assets/scss/responsive";
+
 .menu {
   height: 100%;
   width: 100%;
@@ -27,7 +29,11 @@
 }
 
 .sidenav {
-  width: 304px;
+  width: 100%;
+
+  @media (min-width: $tablet) {
+    width: 304px;
+  }
 
   .nav-item {
     margin-bottom: 4px;

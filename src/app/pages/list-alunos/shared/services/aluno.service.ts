@@ -14,7 +14,18 @@ export class AlunoService {
 
   constructor(private http: HttpService) { }
 
-  public getAlunos(): Observable<Aluno[]> {
-    return this.http.get(this.apiAlunos);
-  }
+  public getAlunos = (): Observable<Aluno[]> =>
+    this.http.get(this.apiAlunos);
+
+
+  public createAluno = (aluno: Aluno): Observable<boolean> =>
+    this.http.post(this.apiAlunos, aluno);
+
+
+  public getAlunoById = (idAluno: number): Observable<Aluno> =>
+    this.http.get(`${this.apiAlunos}/${idAluno}`);
+
+
+  public updateAluno = (aluno: Aluno): Observable<boolean> =>
+    this.http.put(`${this.apiAlunos}/${aluno?.id}`, aluno);
 }

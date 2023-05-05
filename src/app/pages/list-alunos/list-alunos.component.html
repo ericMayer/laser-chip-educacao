@@ -10,7 +10,7 @@
       </span>
     </div>
 
-    <button class="create text-font" mat-raised-button>
+    <button class="confirm text-font" mat-raised-button (click)="goToPath('/criar-aluno')">
       <span class="material-symbols-outlined">
         add
       </span> Criar aluno
@@ -18,10 +18,11 @@
   </div>
 
   <ng-container *ngIf="filteredAlunos?.length">
-    <app-list-card [alunos]="filteredAlunos" *ngIf="(isMobile$ | async); else listTable"></app-list-card>
+    <app-list-card *ngIf="(isMobile$ | async); else listTable" [alunos]="filteredAlunos"
+      (edit)="goToPath('editar-aluno/' + $event)"></app-list-card>
 
     <ng-template #listTable>
-      <app-list-table [alunos]="filteredAlunos"></app-list-table>
+      <app-list-table [alunos]="filteredAlunos" (edit)="goToPath('editar-aluno/' + $event)"></app-list-table>
     </ng-template>
   </ng-container>
 

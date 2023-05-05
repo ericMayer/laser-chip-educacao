@@ -43,21 +43,10 @@
     }
   }
 
-  .create {
+  .confirm ::ng-deep .mdc-button__label {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40px;
-    width: auto;
-    border-radius: 8px;
-    background-color: var(--primary-color);
-    color: var(--dark-color);
-
-    ::ng-deep .mdc-button__label {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-    }
+    gap: 4px;
   }
 }

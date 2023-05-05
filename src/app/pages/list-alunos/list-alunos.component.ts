@@ -1,6 +1,7 @@
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
 import { Observable, map } from 'rxjs';
 
@@ -24,7 +25,8 @@ export class ListAlunosComponent implements OnInit {
 
   constructor(
     private alunoService: AlunoService,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private router: Router
   ) { }
 
   public ngOnInit(): void {
@@ -66,5 +68,9 @@ export class ListAlunosComponent implements OnInit {
 
   public showRequestState(): boolean {
     return this.requestState === RequestState.Error || this.requestState === RequestState.Empty;
+  }
+
+  public goToPath(path: string): void {
+    this.router.navigateByUrl(path);
   }
 }

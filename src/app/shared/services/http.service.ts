@@ -24,6 +24,19 @@ export class HttpService {
   }
 
   /**
+   * Requisição post do HttpClient
+   *
+   * @param url endpoint da API
+   * @param data objeto que vai ser enviado
+   * @param SendType tipo do objeto a ser enviado, por exemplo Login
+   * @param ReturnType tipo do objeto que vai retornar, por exemplo Usuario
+   *
+   */
+  public put<SendyType, ReturnType>(url: string, data: SendyType): Observable<ReturnType> {
+    return this.http.put<ReturnType>(url, data);
+  }
+
+  /**
    * Requisição get do HttpClient
    *
    * @param {{}} url endpoint da API

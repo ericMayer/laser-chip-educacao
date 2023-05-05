@@ -7,12 +7,14 @@ import { AlunoService } from './shared/services/aluno.service';
 import { ListTableComponent } from './shared/components/list-table/list-table.component';
 import { SharedModule } from '@shared/shared.module';
 import { ListCardComponent } from './shared/components/list-card/list-card.component';
+import { CreateAlunoComponent } from './create-aluno/create-aluno.component';
 
 @NgModule({
   declarations: [
     ListAlunosComponent,
     ListTableComponent,
-    ListCardComponent
+    ListCardComponent,
+    CreateAlunoComponent
   ],
   imports: [
     CommonModule,
