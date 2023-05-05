@@ -4,6 +4,10 @@ Projeto desenvolvimento para desafio **Front-end da [LaserChip](https://www.lase
 
 Projeto foi desenvolvido com versão **16 do Angular e Material**, seguindo boas práticas do [Angular coding style guide](https://angular.io/guide/styleguide) e da comunidade, foi utilizado [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) para os commits do projeto, também foi utilizado **programação reativa** [RXJS](https://rxjs.dev/) e está configurado o [Eslint](https://eslint.org/) para validação do código e o [Prettier](https://prettier.io/) para formatação.
 
+## Pré-requisitos
+
+Para conseguir instalar as dependências do projeto e rodar ele é necessário ter instalado na máquina a versão do **Node.js ^16.14.0 || ^18.10.0**, para maiores sobre como fazer a instalação, por favor acessar o [Node.js](https://nodejs.org/en).
+
 ## Instalar dependências
 
 Após baixar o projeto não se esquecer de fazer a **instalação de dependências** usando o comando `npm install` ou `npm i`, após a **instalação das dependências** pode prosseguir para o passo [Rodar o projeto local](#rodar-o-projeto-local).

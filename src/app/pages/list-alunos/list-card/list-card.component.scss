@@ -1,0 +1,48 @@
+@import "../../../../assets/scss/responsive";
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+
+  @media (max-width: $phone) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card {
+    border-radius: 8px;
+
+    .title,
+    .subtitle {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      color: var(--secondary-color);
+
+      .material-symbols-outlined {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+:host ::ng-deep {
+  .mat-mdc-card-header,
+  .mat-mdc-card-content {
+    padding: 8px 8px 0;
+  }
+}

@@ -1,0 +1,33 @@
+.confirm-dialog {
+  padding: 16px;
+  display: grid;
+  gap: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+
+  .image {
+    width: 100%;
+    height: auto;
+    justify-self: center;
+  }
+
+  .actions {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+
+    .cancel,
+    .confirm {
+      cursor: pointer;
+    }
+
+    .cancel {
+      background-color: var(--background-color);
+      border-radius: 8px;
+      padding: 12px;
+      height: 40px;
+    }
+  }
+}

@@ -6,9 +6,11 @@
       "files": ["*.ts"],
       "extends": [
         "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended",
         "prettier"
       ],
       "parserOptions": {
@@ -32,7 +34,12 @@
             "style": "kebab-case"
           }
         ],
-        "no-empty-function": "error",
+        "no-empty-function": [
+          "error",
+          {
+            "allow": ["constructors"]
+          }
+        ],
         "no-var": "error",
         "no-console": "warn",
         "no-debugger": "error",
@@ -81,7 +88,10 @@
     {
       "files": ["*.html"],
       "extends": ["plugin:@angular-eslint/template/recommended", "plugin:@angular-eslint/template/accessibility"],
-      "rules": {}
+      "rules": {
+        "@angular-eslint/template/click-events-have-key-events": "off",
+        "@angular-eslint/template/interactive-supports-focus": "off"
+      }
     }
   ]
 }

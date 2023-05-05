@@ -1,0 +1,68 @@
+@import "../../../assets/scss/responsive";
+
+.menu {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto minmax(0, 100%);
+  overflow-x: hidden;
+}
+
+.toolbar {
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--dark-color);
+
+  .toolbar-button {
+    background: transparent;
+    cursor: pointer;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+  }
+
+  .title-font {
+    line-height: 0 !important;
+  }
+}
+
+.sidenav {
+  width: 100%;
+
+  @media (min-width: $tablet) {
+    width: 304px;
+  }
+
+  .nav-item {
+    margin-bottom: 4px;
+    padding: 0;
+
+    &:first-child {
+      margin-top: 4px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .nav-option {
+      display: flex;
+      align-items: center;
+      height: 56px;
+      padding: 4px 20px;
+      background: var(--background-color);
+      color: var(--dark-color);
+      outline: transparent;
+
+      &::before {
+        background-color: transparent;
+      }
+
+      &:hover {
+        background-color: var(--hover-color);
+      }
+    }
+  }
+}

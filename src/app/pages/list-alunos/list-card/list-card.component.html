@@ -1,0 +1,25 @@
+<div class="cards">
+  <mat-card class="card" *ngFor="let aluno of alunos">
+
+    <mat-card-header>
+      <mat-card-title class="title title-font">{{ aluno?.nome }}</mat-card-title>
+      <mat-card-subtitle class="subtitle subtitle-font">{{ aluno?.sobrenome }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p class="info text-font" *ngFor="let column of columns">
+        {{ column?.title }}: <span>{{ aluno?.[column?.property] }}</span>
+      </p>
+    </mat-card-content>
+
+    <mat-card-actions class="actions">
+      <span class="material-symbols-outlined" (click)="editAluno.emit(aluno?.id)">
+        edit
+      </span>
+
+      <span class="material-symbols-outlined" (click)="deleteAluno.emit(aluno?.id)">
+        delete
+      </span>
+    </mat-card-actions>
+  </mat-card>
+</div>
