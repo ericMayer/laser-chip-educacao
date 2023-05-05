@@ -1,0 +1,29 @@
+<main class="list-alunos">
+
+  <div class="actions">
+    <div class="search">
+      <input type="text" placeholder="Pesquisar aluno pelo nome e(ou) sobrenome" class="search-text small-font"
+        [formControl]="search">
+
+      <span class="material-symbols-outlined">
+        search
+      </span>
+    </div>
+
+    <button class="create text-font" mat-raised-button>
+      <span class="material-symbols-outlined">
+        add
+      </span> Criar aluno
+    </button>
+  </div>
+
+  <ng-container *ngIf="filteredAlunos?.length">
+    <app-list-card [alunos]="filteredAlunos" *ngIf="(isMobile$ | async); else listTable"></app-list-card>
+
+    <ng-template #listTable>
+      <app-list-table [alunos]="filteredAlunos"></app-list-table>
+    </ng-template>
+  </ng-container>
+
+  <app-request-state *ngIf="showRequestState()" [requestState]="requestState"></app-request-state>
+</main>
