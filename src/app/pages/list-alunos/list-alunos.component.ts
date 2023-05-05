@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { Observable, map } from 'rxjs';
+import { Observable, map, take } from 'rxjs';
 
 import { AlunoService } from './shared/services/aluno.service';
 import { Aluno } from './shared/interfaces/aluno.interface';
@@ -72,5 +72,14 @@ export class ListAlunosComponent implements OnInit {
 
   public goToPath(path: string): void {
     this.router.navigateByUrl(path);
+  }
+
+  public deleteAluno(idAluno: number): void {
+    this.alunoService.deleteAluno(idAluno);
+    this.alunoService.updateListAlunos$
+      .pipe(take(1))
+      .subscribe(() =>
+        this.getAlunos()
+      );
   }
 }

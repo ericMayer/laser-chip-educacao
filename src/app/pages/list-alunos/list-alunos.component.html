@@ -19,10 +19,11 @@
 
   <ng-container *ngIf="filteredAlunos?.length">
     <app-list-card *ngIf="(isMobile$ | async); else listTable" [alunos]="filteredAlunos"
-      (edit)="goToPath('editar-aluno/' + $event)"></app-list-card>
+      (editAluno)="goToPath('editar-aluno/' + $event)" (deleteAluno)="deleteAluno($event)"></app-list-card>
 
     <ng-template #listTable>
-      <app-list-table [alunos]="filteredAlunos" (edit)="goToPath('editar-aluno/' + $event)"></app-list-table>
+      <app-list-table [alunos]="filteredAlunos" (editAluno)="goToPath('editar-aluno/' + $event)"
+        (deleteAluno)="deleteAluno($event)"></app-list-table>
     </ng-template>
   </ng-container>
 

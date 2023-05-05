@@ -24,7 +24,7 @@ export class HttpService {
   }
 
   /**
-   * Requisição post do HttpClient
+   * Requisição put do HttpClient
    *
    * @param url endpoint da API
    * @param data objeto que vai ser enviado
@@ -34,6 +34,18 @@ export class HttpService {
    */
   public put<SendyType, ReturnType>(url: string, data: SendyType): Observable<ReturnType> {
     return this.http.put<ReturnType>(url, data);
+  }
+
+  /**
+  * Requisição delete do HttpClient
+  *
+  * @param {{}} url endpoint da API
+  * @param {{}} options parâmetros para ser enviado no get
+  *
+  *
+  */
+  public delete<T>(url: string, options?: any): Observable<any> {
+    return this.http.delete<T>(url, options).pipe(take(1));
   }
 
   /**

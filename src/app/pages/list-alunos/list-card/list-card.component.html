@@ -13,11 +13,11 @@
     </mat-card-content>
 
     <mat-card-actions class="actions">
-      <span class="material-symbols-outlined" (click)="edit.emit(aluno?.id)">
+      <span class="material-symbols-outlined" (click)="editAluno.emit(aluno?.id)">
         edit
       </span>
 
-      <span class="material-symbols-outlined">
+      <span class="material-symbols-outlined" (click)="deleteAluno.emit(aluno?.id)">
         delete
       </span>
     </mat-card-actions>
