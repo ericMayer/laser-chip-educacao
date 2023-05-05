@@ -1,0 +1,27 @@
+:root {
+  --text-font: Roboto, "Helvetica Neue", sans-serif;
+  --title-font: Nunito, "Helvetica Neue", sans-serif;
+}
+
+@mixin font($font-size, $line-height, $font-family) {
+  font-size: $font-size !important;
+  line-height: $line-height !important;
+  font-family: $font-family !important;
+}
+
+.small-font {
+  @include font(14px, 16px, var(--text-font));
+}
+
+.text-font {
+  @include font(16px, 19px, var(--text-font));
+}
+
+.subtitle-font {
+  @include font(18px, 21px, var(--text-font));
+}
+
+.title-font {
+  @include font(24px, 28px, var(--text-font));
+  font-weight: 700 !important;
+}

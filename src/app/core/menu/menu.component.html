@@ -1,0 +1,35 @@
+<div class="menu">
+
+  <mat-toolbar class="toolbar">
+    <button class="toolbar-button" mat-icon-button (click)="openMenu()">
+      <span class="material-symbols-outlined" *ngIf="menuIsOpen; else showMenu">
+        close
+      </span>
+
+      <ng-template #showMenu>
+        <span class="material-symbols-outlined">
+          menu
+        </span>
+      </ng-template>
+    </button>
+
+    <h1 class="title-font">{{ pageTitle }}</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container [hasBackdrop]="true">
+    <mat-sidenav #sidenav mode="side" class="sidenav">
+
+      <mat-nav-list class="nav-item" *ngFor="let option of menu">
+        <a class="nav-option" mat-list-item [routerLink]="option?.route" routerLinkActive="active"
+          (click)="openMenu()">{{
+          option?.text
+          }}</a>
+      </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
